@@ -829,7 +829,7 @@ export default function BatteryMfg() {
                       <td style={{padding:"9px 12px",color:B.sub}}>{g.ir}</td>
                       <td style={{padding:"9px 12px",color:B.sub}}>{g.voltage}</td>
                       <td style={{padding:"9px 12px",fontWeight:700,color:g.color}}>{g.yield}</td>
-                      <td style={{padding:"9px 12px",fontSize:11,color:g.grade==="A+"||g.grade==="A"?B.green:g.grade==="B"?B.orange:B.red,fontWeight:600}}>{g.grade==="A+"?"Premium customer pack":g.grade==="A"?"Standard EV pack":g.grade==="B"?"ESS / energy storage":g.grade==="C"?"Discard / recycle"}</td>
+                      <td style={{padding:"9px 12px",fontSize:11,color:g.grade==="A+"||g.grade==="A"?B.green:g.grade==="B"?B.orange:B.red,fontWeight:600}}>{g.grade==="A+"?"Premium customer pack":g.grade==="A"?"Standard EV pack":g.grade==="B"?"ESS / energy storage":"Discard / recycle"}</td>
                     </tr>
                   ))}</tbody>
                 </table>
