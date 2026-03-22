@@ -318,26 +318,22 @@ function SignInScreen({ onSubmit }) {
             ))}
           </div>
         </div>
-               <div className="sfc" style={{background:"rgba(255,255,255,0.08)",backdropFilter:"blur(20px)",borderRadius:20,padding:"32px 32px",border:"1px solid rgba(255,255,255,0.18)",boxShadow:"0 24px 64px rgba(0,0,0,0.35)"}}>
-          <div style={{fontFamily:"Inter,sans-serif",fontSize:20,fontWeight:800,color:"#fff",marginBottom:4,textAlign:"center"}}>Sign In</div>
-          
+        <div className="sfc" style={{background:"rgba(255,255,255,0.08)",backdropFilter:"blur(20px)",borderRadius:20,padding:"32px 32px",border:"1px solid rgba(255,255,255,0.18)",boxShadow:"0 24px 64px rgba(0,0,0,0.35)"}}>
+          <div style={{fontFamily:"Inter,sans-serif",fontSize:20,fontWeight:800,color:"#fff",marginBottom:4,textAlign:"center"}}>User Sign In</div>
+          <div style={{fontSize:13,color:"rgba(255,255,255,0.5)",textAlign:"center",marginBottom:24}}>Access the Battery Intelligence Platform</div>
           <div style={{display:"flex",flexDirection:"column",gap:14}}>
-            <div>
-              <label style={lbl}>Full Name *</label>
-              <input style={inp("name")} value={form.name} onChange={set("name")} />
-              {errors.name&&<div style={{fontSize:11,color:"#fca5a5",marginTop:3}}>{errors.name}</div>}
-            </div>
-            <div>
-              <label style={lbl}>Company *</label>
-              <input style={inp("company")} value={form.company} onChange={set("company")} />
-              {errors.company&&<div style={{fontSize:11,color:"#fca5a5",marginTop:3}}>{errors.company}</div>}
-            </div>
-            <div>
-              <label style={lbl}>Work Email *</label>
-              <input type="email" style={inp("email")} value={form.email} onChange={set("email")} />
-              {errors.email&&<div style={{fontSize:11,color:"#fca5a5",marginTop:3}}>{errors.email}</div>}
-            </div>
+            <div><label style={lbl}>Full Name *</label><input style={inp("name")} value={form.name} onChange={set("name")} placeholder="Jane Smith"/>{errors.name&&<div style={{fontSize:11,color:"#fca5a5",marginTop:3}}>{errors.name}</div>}</div>
+            <div><label style={lbl}>Company *</label><input style={inp("company")} value={form.company} onChange={set("company")} placeholder="EV Corp / Cell Manufacturer"/>{errors.company&&<div style={{fontSize:11,color:"#fca5a5",marginTop:3}}>{errors.company}</div>}</div>
+            <div><label style={lbl}>Work Email *</label><input type="email" style={inp("email")} value={form.email} onChange={set("email")} placeholder="you@company.com"/>{errors.email&&<div style={{fontSize:11,color:"#fca5a5",marginTop:3}}>{errors.email}</div>}</div>
           </div>
+          <button className="lb" onClick={handleSubmit} disabled={submitting} style={{width:"100%",marginTop:28,padding:"14px",background:submitting?"rgba(255,255,255,0.15)":"#fff",color:submitting?"rgba(255,255,255,0.4)":"#1d4ed8",border:"none",borderRadius:10,fontSize:15,fontWeight:800,cursor:submitting?"not-allowed":"pointer",fontFamily:"Inter,sans-serif",transition:"all 0.2s"}}>
+            {submitting?"⏳ Launching...":"🚀 Launch Platform"}
+          </button>
+          <div style={{textAlign:"center",fontSize:11,color:"rgba(255,255,255,0.35)",marginTop:14}}>🔒 Secure · <a href="mailto:info@ariprus.com" style={{color:"rgba(255,255,255,0.6)",textDecoration:"none",fontWeight:600}}>info@ariprus.com</a></div>
+        </div>
+        <div style={{textAlign:"center",marginTop:18,fontSize:12,color:"rgba(255,255,255,0.25)"}}>© 2026 AriPrus · <a href="https://ariprus.com" style={{color:"rgba(255,255,255,0.45)",textDecoration:"none"}}>ariprus.com</a></div>
+      </div>
+    </div>
   );
 }
 
