@@ -340,7 +340,7 @@ function SignInScreen({ onSubmit }) {
           <div style={{fontSize:13,color:"rgba(255,255,255,0.5)",textAlign:"center",marginBottom:24}}>Access the Battery Intelligence Platform</div>
           <div style={{display:"flex",flexDirection:"column",gap:14}}>
             <div>
-              <label style={lbl}>Full Name *</label>
+              <label style={lbl}>Name *</label>
               <input style={inp("name")} value={form.name} onChange={set("name")} />
               {errors.name&&<div style={{fontSize:11,color:"#fca5a5",marginTop:3}}>{errors.name}</div>}
             </div>
