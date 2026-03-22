@@ -312,9 +312,9 @@ function SignInScreen({ onSubmit }) {
           </div>
           <div style={{fontFamily:"Inter,sans-serif",fontSize:28,fontWeight:800,color:"#fff",marginBottom:4}}>AriLinc</div>
           <div style={{fontSize:11,color:"rgba(255,255,255,0.5)",letterSpacing:2,textTransform:"uppercase",fontWeight:600,marginBottom:8}}>Battery Manufacturing Intelligence · by AriPrus</div>
-          <div style={{display:"flex",justifyContent:"center",gap:8,flexWrap:"wrap"}}>
-            {["⚡ Formation Cycles","🔬 Quality Control","📊 Yield Analytics"].map((t,i)=>(
-              <span key={i} style={{background:"rgba(255,255,255,0.12)",border:"1px solid rgba(255,255,255,0.2)",borderRadius:20,padding:"3px 12px",fontSize:11,fontWeight:600,color:"#fff"}}>{t}</span>
+          <div style={{display:"flex",justifyContent:"center",gap:6,flexWrap:"wrap",maxWidth:320,margin:"0 auto"}}>
+            {["⚡ Formation","🔬 Quality","📊 Analytics"].map((t,i)=>(
+              <span key={i} style={{background:"rgba(255,255,255,0.12)",border:"1px solid rgba(255,255,255,0.2)",borderRadius:20,padding:"3px 10px",fontSize:11,fontWeight:600,color:"#fff",whiteSpace:"nowrap"}}>{t}</span>
             ))}
           </div>
         </div>
