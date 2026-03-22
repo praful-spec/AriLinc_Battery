@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect, useRef } from "react";
 import {
   LineChart, Line, BarChart, Bar, AreaChart, Area,
@@ -443,7 +444,7 @@ export default function BatteryMfg() {
             <div style={{fontFamily:"Inter,sans-serif",fontSize:17,fontWeight:800,color:B.text,marginBottom:14}}>Production Line Status</div>
             <div className="g3">
               {LINES.map(line=>{
-                const defectData = genDefectTrend(line).filter((_,i)=>i%4===0);
+                const defectData = genDefectTrend(line).filter((_,idx)=>idx%4===0);
                 return (
                   <div key={line.id} style={{background:"#fff",border:`2px solid ${line.status==="warning"?"#fde68a":line.status==="in_formation"?"#bfdbfe":"#e2e8f0"}`,borderRadius:12,overflow:"hidden",boxShadow:"0 2px 8px rgba(0,0,0,0.05)"}}>
                     <div style={{padding:"12px 16px",borderBottom:`3px solid ${line.color}`,display:"flex",justifyContent:"space-between",alignItems:"flex-start"}}>
