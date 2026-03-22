@@ -845,7 +845,7 @@ export default function BatteryMfg() {
                   {icon:"🔬",step:"2. EOL Testing",desc:"Capacity, DCIR, OCV, self-discharge at 25°C and 45°C",color:B.purple},
                   {icon:"🧠",step:"3. AI Scoring",desc:"ML model trained on 2.4M cells · Predicts 10-year calendar life",color:B.orange},
                   {icon:"🏆",step:"4. Grade Assign",desc:"A+/A/B/C assigned based on 12 parameters simultaneously",color:B.green},
-                  {icon:"📦",step:"5. Pack Match",desc:"Cell matching for balance within pack — dCap < 0.5%, dIR < 0.2mOhm",color:B.teal},
+                  {icon:"📦",step:"5. Pack Match",desc:"Cell matching for balance within pack — dCap under 0.5%, dIR under 0.2mOhm",color:B.teal},
                 ].map((s,i)=>(
                   <div key={i} style={{background:"#fff",border:`2px solid ${s.color}25`,borderRadius:10,padding:"14px",borderTop:`3px solid ${s.color}`,position:"relative"}}>
                     {i < 4 && <div style={{position:"absolute",right:-14,top:"38%",fontSize:12,color:B.border,zIndex:1}}>{" >"}</div>}
