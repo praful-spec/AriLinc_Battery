@@ -374,7 +374,7 @@ function SignInScreen({ onSubmit }) {
 //  MAIN COMPONENT
 // ================================================================
 export default function BatteryMfg() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({ name: "Guest", company: "AriPrus" });
   const [section, setSection] = useState("lines");
   const [selectedLine, setSelectedLine] = useState(LINES[3]);
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -404,7 +404,9 @@ export default function BatteryMfg() {
     return () => { document.head.removeChild(el); };
   }, []);
 
-  if(!user) return <SignInScreen onSubmit={setUser}/>;
+  // Sign-in gate removed — the app now loads directly into the dashboard.
+  // SignInScreen is left defined above (unused) in case you want to
+  // reinstate a gate later; it's simply no longer rendered here.
 
   const warningCount = LINES.filter(l=>l.status==="warning").length;
   const totalCells = 1847;
@@ -437,8 +439,6 @@ export default function BatteryMfg() {
           {warningCount>0&&<div style={{background:"#fffbeb",border:"1px solid #fde68a",borderRadius:6,padding:"4px 10px",fontSize:12,fontWeight:700,color:B.orange}}>⚠ {warningCount} Line Alert</div>}
           <div style={{background:"#f0fdf4",border:"1px solid #bbf7d0",borderRadius:6,padding:"4px 10px",fontSize:12,fontWeight:700,color:B.green,display:"flex",alignItems:"center",gap:5}}><span style={{animation:"blink 1s infinite"}}>●</span>LIVE</div>
           <div style={{fontSize:12,color:B.light}}>{time}</div>
-          <div style={{fontSize:12,color:B.light}}>👋 {user.name} · {user.company}</div>
-          <button onClick={()=>setUser(null)} style={{fontSize:11,color:B.light,background:"none",border:`1px solid ${B.border}`,borderRadius:6,padding:"4px 10px",cursor:"pointer"}}>Sign Out</button>
         </div>
       </div>
 
